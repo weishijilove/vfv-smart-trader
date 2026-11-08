@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101820"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
+<title>VFV Smart Trader</title>
+</head>
+<body>
+<header><div><div class="eyebrow">LONG-TERM WATCHLIST</div><h1>VFV <span>Smart Trader</span></h1></div><button id="refresh" aria-label="Refresh">↻</button></header>
+<main>
+<section class="hero card">
+ <div class="row"><span class="muted">Vanguard S&P 500 Index ETF</span><span id="status" class="pill">Connecting…</span></div>
+ <div id="price" class="price">—</div><div id="change" class="change muted">Waiting for market data</div>
+ <div class="row small"><span>Toronto Stock Exchange · CAD</span><span id="updated">—</span></div>
+</section>
+<section class="grid">
+ <div class="card metric"><label>52-week high</label><strong id="high52">—</strong><small id="drop52">—</small></div>
+ <div class="card metric"><label>3-month high</label><strong id="high3m">—</strong><small id="drop3m">—</small></div>
+</section>
+<section class="card">
+ <div class="section-title"><h2>Pullback watch</h2><span class="muted">Your alert levels</span></div>
+ <div class="alertline"><div><b>−5%</b><span>Watch zone</span></div><strong id="level5">—</strong></div>
+ <div class="bar"><i id="bar5"></i></div>
+ <div class="alertline"><div><b>−8%</b><span>Review opportunity</span></div><strong id="level8">—</strong></div>
+ <div class="bar"><i id="bar8"></i></div>
+ <p class="note">Levels are calculated from the higher of the 52-week and 3-month reference highs. Alerts are informational, not trade instructions.</p>
+</section>
+<section class="card">
+ <div class="section-title"><h2>Trend assessment</h2><span id="signal" class="pill neutral">Loading</span></div>
+ <div class="grid three">
+  <div class="metric"><label>RSI (14)</label><strong id="rsi">—</strong><small id="rsiNote">—</small></div>
+  <div class="metric"><label>EMA (50)</label><strong id="ema">—</strong><small id="emaNote">—</small></div>
+  <div class="metric"><label>MACD</label><strong id="macd">—</strong><small id="macdNote">—</small></div>
+ </div>
+ <p id="reason" class="note">Waiting for enough daily price history.</p>
+</section>
+<section class="card">
+ <div class="section-title"><h2>Notifications</h2><button id="notify" class="secondary">Enable alerts</button></div>
+ <p class="note">The app checks while it is open. iPhone web apps cannot guarantee background price checks; keep this page open for timely alerts.</p>
+ <div id="log" class="log">No alerts yet.</div>
+</section>
+<section class="card">
+ <h2>Investment profile</h2>
+ <p class="note">TFSA · Long-term · Wait for pullbacks · Alerts only · No automatic trading.</p>
+ <p class="note">This tool does not connect to Wealthsimple or place orders. Confirm quotes and orders in your brokerage app.</p>
+</section>
+<footer>Market data may be delayed. Not financial or tax advice. TFSA eligibility and contribution room are your responsibility.</footer>
+</main>
+<script src="app.js"></script>
+</body></html>
